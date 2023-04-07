@@ -142,7 +142,7 @@
                     <a href="images/my-cv.pdf" download class="btn btn2">Download Cv</a>
                 </div>
                 <div class="contact-right">
-                    <form name="submit-to-google-sheet">
+                    <form name="submit-to-google-sheet" class="gform" method="POST" data-email="vhh0106@gmail.com" action="https://script.google.com/macros/s/AKfycbwHSKGfy-Ls21Kwe45uaL9dNOfBi9D4rx72rJ15xCS5q9l8F1pqpG2qVtiqRhapgXKl/exec">
                         <input type="text" name="Name" placeholder="Your Name" required>
                         <input type="email" name="Email" placeholder="Your Email" required>
                         <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
@@ -309,7 +309,7 @@
         };
     </script>
     <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbwULHvjM2iXuc8rf7z2I1X9aLyEJ2yP4utlCsl9MT8_jvaM2_OkeTyO6iooWjAqH1wlcw/exec'
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwHSKGfy-Ls21Kwe45uaL9dNOfBi9D4rx72rJ15xCS5q9l8F1pqpG2qVtiqRhapgXKl/exec'
         const form = document.forms['submit-to-google-sheet']
         const msg = document.getElementById("msg")
 
@@ -323,7 +323,7 @@
                     msg.innerHTML = "Message sent successfully!"
                     setTimeout(function() {
                         msg.innerHTML = ""
-                    }, 3000)
+                    }, 1000)
                     form.reset()
                 })
                 .catch(error => console.error('Error!', error.message))
