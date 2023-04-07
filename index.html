@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio Website</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/27e3344cee.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/logo.png" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fas fa-times" onclick="closemenu()"></i>
+                </ul>
+                <i class="fas fa-bars" onclick="openmenu()"></i>
+                <nav>
+                    <div class="header-text">
+                        <p>Front End Developer</p>
+                        <h1>Hi, I'm <span>Vu Hoang Hiep</span><br> From Viet Nam</h1>
+                    </div>
+        </div>
+    </div>
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/user.jpg">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>I would like to use the knowledge learned from University to become a qualified and responsible staff who can contribute to the success and value of your company, especially in the Frontend Developer</p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')" ">Experience</p>
+                        <p class="tab-links " onclick="opentab( 'education') "">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>UI/UX</span><br>Designing Web/App interfaces</li>
+                            <li><span>Web Development</span><br>Web app Development</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>2022 - Current</span><br>MICRO HIGH TECH JOINT STOCK COMPANY</li>
+                            <li><span>2020 - 2022</span><br>Intership at UNIVERSITY OF TECHNOLOGY HCM</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2018 - 2022</span><br>Infomation Technology at UNIVERSITY OF TECHNOLOGY HCM</li>
+                            <li><span>2015 - 2018</span><br>Tran Quoc Tuan High School</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="services">
+        <div class="container">
+            <h1 class="sub-title">My Services</h1>
+            <div class="services-list">
+                <div>
+                    <i class="fa-solid fa-code"></i>
+                    <h2>Web Design</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis earum ullam dolore labore asperiores accusamus enim consequatur nihil at? Aliquam animi soluta amet impedit blanditiis, reiciendis harum quod rerum ducimus.</p>
+                    <a href="#">Learn more</a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-crop"></i>
+                    <h2>UI/UX Design</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis earum ullam dolore labore asperiores accusamus enim consequatur nihil at? Aliquam animi soluta amet impedit blanditiis, reiciendis harum quod rerum ducimus.</p>
+                    <a href="#">Learn more</a>
+                </div>
+                <div>
+                    <i class="fa-brands fa-app-store"></i>
+                    <h2>App Design</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis earum ullam dolore labore asperiores accusamus enim consequatur nihil at? Aliquam animi soluta amet impedit blanditiis, reiciendis harum quod rerum ducimus.</p>
+                    <a href="#">Learn more</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div id="portfolio">
+        <div class="container">
+            <h1 class="sub-title">My Work</h1>
+            <div class="work-list">
+                <div class="work">
+                    <img src="images/work-1.png">
+                    <div class="layer">
+                        <h3>Social Media App</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum delectus quos vitae beatae facilis tenetur quo, voluptate ipsa enim officiis mollitia, in hic temporibus natus dignissimos sed quia soluta aliquid.</p>
+                        <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/work-2.png">
+                    <div class="layer">
+                        <h3>Music App</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum delectus quos vitae beatae facilis tenetur quo, voluptate ipsa enim officiis mollitia, in hic temporibus natus dignissimos sed quia soluta aliquid.</p>
+                        <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/work-3.png">
+                    <div class="layer">
+                        <h3>Online Shopping App</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum delectus quos vitae beatae facilis tenetur quo, voluptate ipsa enim officiis mollitia, in hic temporibus natus dignissimos sed quia soluta aliquid.</p>
+                        <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="btn">See more</a>
+        </div>
+    </div>
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><i class="fas fa-paper-plane"></i>hiepvu@minhhop.net</p>
+                    <p><i class="fas fa-phone-square-alt"></i>034 855 4851</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/vhh0106/"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://twitter.com/vhh0106"><i class="fa-brands fa-twitter-square"></i></a>
+                        <a href="https://www.instagram.com/vhh0106.it/"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://github.com/vhh0106"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                    <a href="images/my-cv.pdf" download class="btn btn2">Download Cv</a>
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="Email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+                    <span id="msg"></span>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Copyright © <i class="fa-solid fa-heart"></i> VHH 2023</p>
+        </div>
+    </div>
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname) {
+            for (tablink of tablinks) {
+                tablink.classList.remove("active-link");
+            }
+            for (tabcontent of tabcontents) {
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab")
+
+        }
+    </script>
+    <script>
+        var sidemenu = document.getElementById("sidemenu");
+
+        function openmenu() {
+            sidemenu.style.right = "0";
+        }
+
+        function closemenu() {
+            sidemenu.style.right = "-200px";
+        }
+    </script>
+    <style>
+        #snowflakeContainer {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+        }
+        
+        .snowflake {
+            padding-left: 15px;
+            font-size: 14px;
+            line-height: 24px;
+            position: fixed;
+            color: #ebebeb;
+            user-select: none;
+            z-index: 1000;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            -khtml-user-select: none;
+            -webkit-user-select: none;
+            -webkit-touch-callout: none;
+        }
+        
+        .snowflake:hover {
+            cursor: default
+        }
+    </style>
+    <div id='snowflakeContainer'>
+        <p class='snowflake'>❄</p>
+    </div>
+    <script>
+        var requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+        var transforms = ["transform", "msTransform", "webkitTransform", "mozTransform", "oTransform"];
+        var transformProperty = getSupportedPropertyName(transforms);
+        var snowflakes = [];
+        var browserWidth;
+        var browserHeight;
+        var numberOfSnowflakes = 50;
+        var resetPosition = false;
+
+        function setup() {
+            window.addEventListener("DOMContentLoaded", generateSnowflakes, false);
+            window.addEventListener("resize", setResetFlag, false)
+        }
+        setup();
+
+        function getSupportedPropertyName(b) {
+            for (var a = 0; a < b.length; a++) {
+                if (typeof document.body.style[b[a]] != "undefined") {
+                    return b[a]
+                }
+            }
+            return null
+        }
+
+        function Snowflake(b, a, d, e, c) {
+            this.element = b;
+            this.radius = a;
+            this.speed = d;
+            this.xPos = e;
+            this.yPos = c;
+            this.counter = 0;
+            this.sign = Math.random() < 0.5 ? 1 : -1;
+            this.element.style.opacity = 0.5 + Math.random();
+            this.element.style.fontSize = 4 + Math.random() * 30 + "px"
+        }
+        Snowflake.prototype.update = function() {
+            this.counter += this.speed / 5000;
+            this.xPos += this.sign * this.speed * Math.cos(this.counter) / 40;
+            this.yPos += Math.sin(this.counter) / 40 + this.speed / 30;
+            setTranslate3DTransform(this.element, Math.round(this.xPos), Math.round(this.yPos));
+            if (this.yPos > browserHeight) {
+                this.yPos = -50
+            }
+        };
+
+        function setTranslate3DTransform(a, c, b) {
+            var d = "translate3d(" + c + "px, " + b + "px, 0)";
+            a.style[transformProperty] = d
+        }
+
+        function generateSnowflakes() {
+            var b = document.querySelector(".snowflake");
+            var h = b.parentNode;
+            browserWidth = document.documentElement.clientWidth;
+            browserHeight = document.documentElement.clientHeight;
+            for (var d = 0; d < numberOfSnowflakes; d++) {
+                var j = b.cloneNode(true);
+                h.appendChild(j);
+                var e = getPosition(50, browserWidth);
+                var a = getPosition(50, browserHeight);
+                var c = 5 + Math.random() * 40;
+                var g = 4 + Math.random() * 10;
+                var f = new Snowflake(j, g, c, e, a);
+                snowflakes.push(f)
+            }
+            h.removeChild(b);
+            moveSnowflakes()
+        }
+
+        function moveSnowflakes() {
+            for (var b = 0; b < snowflakes.length; b++) {
+                var a = snowflakes[b];
+                a.update()
+            }
+            if (resetPosition) {
+                browserWidth = document.documentElement.clientWidth;
+                browserHeight = document.documentElement.clientHeight;
+                for (var b = 0; b < snowflakes.length; b++) {
+                    var a = snowflakes[b];
+                    a.xPos = getPosition(50, browserWidth);
+                    a.yPos = getPosition(50, browserHeight)
+                }
+                resetPosition = false
+            }
+            requestAnimationFrame(moveSnowflakes)
+        }
+
+        function getPosition(b, a) {
+            return Math.round(-1 * b + Math.random() * (a + 2 * b))
+        }
+
+        function setResetFlag(a) {
+            resetPosition = true
+        };
+    </script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwULHvjM2iXuc8rf7z2I1X9aLyEJ2yP4utlCsl9MT8_jvaM2_OkeTyO6iooWjAqH1wlcw/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg")
+
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, {
+                    method: 'POST',
+                    body: new FormData(form)
+                })
+                .then(response => {
+                    msg.innerHTML = "Message sent successfully!"
+                    setTimeout(function() {
+                        msg.innerHTML = ""
+                    }, 3000)
+                    form.reset()
+                })
+                .catch(error => console.error('Error!', error.message))
+        })
+    </script>
+</body>
+
+</html>
