@@ -176,3 +176,18 @@ function getPosition(b, a) {
 function setResetFlag(a) {
     resetPosition = true
 };
+
+document.addEventListener("DOMContentLoaded", function() {
+    window.addEventListener("scroll", function() {
+        if (window.scrollY > 20) {
+            document.getElementById("scrollToTop").style.display = "block";
+        } else {
+            document.getElementById("scrollToTop").style.display = "none";
+        }
+    });
+
+    document.getElementById("scrollToTop").addEventListener("click", function(e) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+});
