@@ -28,8 +28,8 @@
                 <i class="fas fa-bars" onclick="openmenu()"></i>
             </nav>
             <div class="header-text">
-                <p>Frontend Developer</p>
-                <h1>Hi, I'm <span>Vu Hoang Hiep</span><br>Admin Sai Gon Luon Lo</h1>
+                <h2><span>Vu Hoang Hiep</span></h2>
+                <h1>Hi, I'm <span class="typing-text"></span><br>Admin Sai Gon Luon Lo</h1>
             </div>
         </div>
     </div>
@@ -61,8 +61,9 @@
                     </div>
                     <div class="tab-contents active-tab" id="skills">
                         <ul>
-                            <li><span>UI/UX</span><br>Designing Web/App interfaces</li>
-                            <li><span>Web Development</span><br>Web app Development</li>
+                            <li><span>UI/UX Designer</span><br>Designing Web/App interfaces</li>
+                            <li><span>Web Developer</span><br>Web app Development</li>
+                            <li><span>Graphic Designer</span><br>Website, banner, poster, cover, infographics, video,... </li>
                         </ul>
                     </div>
                     <div class="tab-contents" id="experience">
@@ -166,7 +167,7 @@
             </div>
         </div>
         <div class="copyright">
-            <p>Copyright © <i class="fa-solid fa-heart"></i> VHH 2023</p>
+            <p>Copyright © <i class="fa-solid fa-heart"></i> VHH 2024</p>
         </div>
     </div>
     <a href="#header" id="scrollToTop" class="top">
@@ -204,60 +205,19 @@
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
     </script>
-    <script>
-        var tablinks = document.getElementsByClassName("tab-links");
-        var tabcontents = document.getElementsByClassName("tab-contents");
-
-        function opentab(tabname) {
-            for (tablink of tablinks) {
-                tablink.classList.remove("active-link");
-            }
-            for (tabcontent of tabcontents) {
-                tabcontent.classList.remove("active-tab");
-            }
-            event.currentTarget.classList.add("active-link");
-            document.getElementById(tabname).classList.add("active-tab")
-
-        }
-    </script>
-    <script>
-        var sidemenu = document.getElementById("sidemenu");
-
-        function openmenu() {
-            sidemenu.style.right = "0";
-        }
-
-        function closemenu() {
-            sidemenu.style.right = "-200px";
-        }
-    </script>
     <div id='snowflakeContainer'>
         <p class='snowflake'>❄</p>
     </div>
-    <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbwHSKGfy-Ls21Kwe45uaL9dNOfBi9D4rx72rJ15xCS5q9l8F1pqpG2qVtiqRhapgXKl/exec'
-        const form = document.forms['submit-to-google-sheet']
-        const msg = document.getElementById("msg")
-
-        form.addEventListener('submit', e => {
-            e.preventDefault()
-            fetch(scriptURL, {
-                    method: 'POST',
-                    body: new FormData(form)
-                })
-                .then(response => {
-                    msg.innerHTML = "Message sent successfully!"
-                    setTimeout(function() {
-                        msg.innerHTML = ""
-                    }, 2000)
-                    form.reset()
-                })
-                .catch(error => console.error('Error!', error.message))
-        })
-    </script>
     <script src="https://cdn.jsdelivr.net/mojs/latest/mo.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
     <script src="script.js"></script>
-
+    <script>
+        var typed = new Typed('.typing-text', {
+            strings: ['Web Designer', 'Front-end Developer', 'Photographer', 'Graphic Designer'],
+            typeSpeed: 120,
+            loop: true
+        });
+    </script>
 </body>
 
 </html>
