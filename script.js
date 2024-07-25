@@ -236,3 +236,29 @@ document.addEventListener("DOMContentLoaded", function() {
         window.scrollTo({ top: 0, behavior: "smooth" });
     });
 });
+
+function updateClock() {
+    let now = new Date(new Date().getTime() + 7 * 3600 * 1000);
+    let hours = now.getUTCHours();
+    let minutes = now.getUTCMinutes();
+    let seconds = now.getUTCSeconds();
+    let period = 'AM';
+
+    if (hours >= 12) {
+        period = 'PM';
+    }
+    if (hours > 12) {
+        hours -= 12;
+    }
+    if (hours === 0) {
+        hours = 12;
+    }
+    minutes = minutes < 10 ? '0' + minutes : minutes;
+    seconds = seconds < 10 ? '0' + seconds : seconds;
+    let timeString = hours + ':' + minutes + ':' + seconds + ' ' + period;
+    document.getElementById('clock').innerHTML = timeString;
+}
+document.addEventListener('DOMContentLoaded', (event) => {
+    updateClock();
+    setInterval(updateClock, 1000);
+});
