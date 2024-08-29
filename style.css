@@ -45,7 +45,7 @@
     }
     
     nav ul li a {
-        color: #080808;
+        color: #FFDF00;
         text-decoration: none;
         font-size: 25px;
         position: relative;
@@ -384,6 +384,9 @@
         }
         .header-text h1 {
             font-size: 25px;
+        }
+        nav ul li a {
+            color: #000;
         }
         nav .fas {
             display: block;
