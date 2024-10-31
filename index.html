@@ -64,6 +64,7 @@
                             <li><span>UI/UX Designer</span><br>Designing Web/App interfaces</li>
                             <li><span>Web Developer</span><br>Web app Development</li>
                             <li><span>Graphic Designer</span><br>Website, banner, poster, cover, infographics, video,... </li>
+                            <li><span>Support Social</span><br>Facebook, instagram, tiktok, youtube, shoppe,... </li>
                         </ul>
                     </div>
                     <div class="tab-contents" id="experience">
@@ -158,7 +159,7 @@
                 <div class="contact-right">
                     <form name="submit-to-google-sheet" class="gform" method="POST" data-email="vhh0106@gmail.com" action="https://script.google.com/macros/s/AKfycbwHSKGfy-Ls21Kwe45uaL9dNOfBi9D4rx72rJ15xCS5q9l8F1pqpG2qVtiqRhapgXKl/exec">
                         <input type="text" name="Name" placeholder="Your Name" required>
-                        <input type="email" name="Email" placeholder="Your Email" required>
+                        <input type="email" name="Email" placeholder="Your Email" required  oninvalid="this.setCustomValidity('Vui lòng nhập đúng định dạng email.')" oninput="this.setCustomValidity('')">
                         <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
                         <span id="msg"></span>
                         <button type="submit" class="btn btn2">Submit</button>
@@ -263,7 +264,7 @@
     <script src="script.js"></script>
     <script>
         var typed = new Typed('.typing-text', {
-            strings: ['Web Designer', 'Front-end Developer', 'Photographer', 'Graphic Designer'],
+            strings: ['Frontend Developer', 'Photographer', 'Graphic Designer', 'Support Social'],
             typeSpeed: 120,
             loop: true
         });
@@ -272,6 +273,23 @@
         <img src="images/cat.webp">
     </div>
     <div id="clock" class="clock"></div>
+    <script>
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId: "1784956665094089",
+                xfbml: true,
+                version: "v2.6"
+            });
+        };
+        (function(d, s, id){
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) { return; }
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <div class="fb-customerchat" page_id="849492375189010"></div>
 </body>
 
 </html>
