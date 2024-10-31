@@ -227,52 +227,7 @@
     </script>
     <!-- Messenger Plugin chat Code -->
     <div id="fb-root"></div>
-
-    <!-- Your Plugin chat code -->
-    <div id="fb-customer-chat" class="fb-customerchat">
-    </div>
-
-    <script>
-        var chatbox = document.getElementById('fb-customer-chat');
-        chatbox.setAttribute("page_id", "849492375189010");
-        chatbox.setAttribute("attribution", "biz_inbox");
-    </script>
-
     <!-- Your SDK code -->
-    <script>
-        window.fbAsyncInit = function() {
-            FB.init({
-                xfbml: true,
-                version: 'v17.0'
-            });
-        };
-
-        (function(d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s);
-            js.id = id;
-            js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-    </script>
-    <div id='snowflakeContainer'>
-        <p class='snowflake'>❄</p>
-    </div>
-    <script src="https://cdn.jsdelivr.net/mojs/latest/mo.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
-    <script src="script.js"></script>
-    <script>
-        var typed = new Typed('.typing-text', {
-            strings: ['Frontend Developer', 'Photographer', 'Graphic Designer', 'Support Social'],
-            typeSpeed: 120,
-            loop: true
-        });
-    </script>
-    <div class="running-cat">
-        <img src="images/cat.webp">
-    </div>
-    <div id="clock" class="clock"></div>
     <script>
         window.fbAsyncInit = function() {
             FB.init({
@@ -290,6 +245,23 @@
         }(document, 'script', 'facebook-jssdk'));
     </script>
     <div class="fb-customerchat" page_id="849492375189010"></div>
+    <div id='snowflakeContainer'>
+        <p class='snowflake'>❄</p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/mojs/latest/mo.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+    <script src="script.js"></script>
+    <script>
+        var typed = new Typed('.typing-text', {
+            strings: ['Frontend Developer', 'Photographer', 'Graphic Designer', 'Support Social'],
+            typeSpeed: 120,
+            loop: true
+        });
+    </script>
+    <div class="running-cat">
+        <img src="images/cat.webp">
+    </div>
+    <div id="clock" class="clock"></div>
 </body>
 
 </html>
