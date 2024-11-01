@@ -14,7 +14,21 @@
 
 <body>
     <div id="header">
+        <div class="header-text">
+            <h2><span>Vu Hoang Hiep</span></h2>
+            <h1>Hi, I'm <span class="typing-text"></span></h1>
+        </div>
         <div class="container">
+            <div class="slider">
+                <div class="slide active" style="background-image: url(./images/bg.png);"></div>
+                <div class="slide" style="background-image: url(./images/sg.jpg);"></div>
+                <div class="slide" style="background-image: url(./images/sg1.jpg);"></div>
+                <div class="dot-container">
+                    <span class="dot" onclick="currentSlide(0)"></span>
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                </div>
+            </div>
             <nav>
                 <img src="images/logo.png" class="logo">
                 <ul id="sidemenu">
@@ -27,10 +41,6 @@
                 </ul>
                 <i class="fas fa-bars" onclick="openmenu()"></i>
             </nav>
-            <div class="header-text">
-                <h2><span>Vu Hoang Hiep</span></h2>
-                <h1>Hi, I'm <span class="typing-text"></span><br>Admin Sai Gon Luon Lo</h1>
-            </div>
         </div>
     </div>
     <div id="about">
@@ -159,7 +169,7 @@
                 <div class="contact-right">
                     <form name="submit-to-google-sheet" class="gform" method="POST" data-email="vhh0106@gmail.com" action="https://script.google.com/macros/s/AKfycbwHSKGfy-Ls21Kwe45uaL9dNOfBi9D4rx72rJ15xCS5q9l8F1pqpG2qVtiqRhapgXKl/exec">
                         <input type="text" name="Name" placeholder="Your Name" required>
-                        <input type="email" name="Email" placeholder="Your Email" required  oninvalid="this.setCustomValidity('Vui lòng nhập đúng định dạng email.')" oninput="this.setCustomValidity('')">
+                        <input type="email" name="Email" placeholder="Your Email" required oninvalid="this.setCustomValidity('Vui lòng nhập đúng định dạng email.')" oninput="this.setCustomValidity('')">
                         <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
                         <span id="msg"></span>
                         <button type="submit" class="btn btn2">Submit</button>
@@ -221,28 +231,8 @@
     <a href="#header" id="scrollToTop" class="top">
         <img src="images/scroll.png" alt="Scroll For Top">
     </a>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
-    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     </script>
-    <script> window.fbMessengerPlugins = window.fbMessengerPlugins || { init : function() { FB.init({ appId: "1784956665094089", xfbml: true, version: "v3.0" }); }, callable : [] }; window.fbAsyncInit = window.fbAsyncInit || function() { window.fbMessengerPlugins.callable.forEach( function( item ) { item(); } ); window.fbMessengerPlugins.init(); }; setTimeout( function() { (function(d, s, id){ var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) { return; } js = d.createElement(s); js.id = id; js.src = "//connect.facebook.net/vi_VN/sdk.js"; fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'facebook-jssdk')); }, 0); </script><div class="fb-send-to-messenger" messenger_app_id="1784956665094089" page_id="849492375189010" color="blue" size="large" data-ref="bot_6723a0fb7959fc4b9936b3a1"></div>
-    <script>
-        window.fbAsyncInit = function() {
-            FB.init({
-                appId: "1784956665094089",
-                xfbml: true,
-                version: "v2.6"
-            });
-        };
-        (function(d, s, id){
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) { return; }
-            js = d.createElement(s); js.id = id;
-            js.src = "//connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js";
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-    </script>
-    <div class="fb-customerchat" page_id="849492375189010"></div>
     <div id='snowflakeContainer'>
         <p class='snowflake'>❄</p>
     </div>
