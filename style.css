@@ -433,8 +433,8 @@
     /*--------reponsive small screens-------*/
     
     @media(max-width: 600px) {
-        #header {
-            background-image: url(./images/phone-bg.png);
+        .dot:first-child {
+            display: none;
         }
         .header-text {
             margin-top: 100%;

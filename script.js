@@ -275,16 +275,22 @@ document.addEventListener('DOMContentLoaded', (event) => {
     updateClock();
     setInterval(updateClock, 1000);
 });
+
 let currentSlideIndex = 0;
 const slides = document.querySelectorAll('.slide');
 const dots = document.querySelectorAll('.dot');
 
 function showSlide(index) {
-    // Reset all slides and dots
     slides.forEach((slide, i) => {
+        // Reset all slides and dots
         slide.classList.remove('active');
         dots[i].classList.remove('active');
     });
+
+    // Check screen width and adjust index if on mobile
+    if (window.innerWidth <= 768 && index === 0) {
+        index = 1; // Skip the first slide on mobile
+    }
 
     // Set the active slide and dot
     slides[index].classList.add('active');
@@ -292,7 +298,14 @@ function showSlide(index) {
 }
 
 function nextSlide() {
+    // Advance the slide index
     currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+
+    // Skip the first slide if on mobile
+    if (window.innerWidth <= 768 && currentSlideIndex === 0) {
+        currentSlideIndex = 1;
+    }
+
     showSlide(currentSlideIndex);
 }
 
@@ -303,3 +316,8 @@ function currentSlide(index) {
 
 setInterval(nextSlide, 3000);
 showSlide(currentSlideIndex);
+
+document.querySelectorAll('.slide').forEach(slide => {
+    const bgImage = slide.getAttribute('data-bg');
+    slide.style.backgroundImage = bgImage;
+});

@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="dev" content="Portfolio">
     <title>Personal Portfolio Website</title>
-    <link rel="icon" href="images/logo.png" type="imgage/x-icons">
+    <link rel="icon" href="images/logo.webp" type="imgage/x-icons">
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/27e3344cee.js" crossorigin="anonymous"></script>
 
@@ -20,9 +21,9 @@
         </div>
         <div class="container">
             <div class="slider">
-                <div class="slide active" style="background-image: url(./images/bg.png);"></div>
-                <div class="slide" style="background-image: url(./images/sg.jpg);"></div>
-                <div class="slide" style="background-image: url(./images/sg1.jpg);"></div>
+                <div class="slide" data-bg="url(./images/bg.webp)"></div>
+                <div class="slide" data-bg="url(./images/sg.webp)"></div>
+                <div class="slide" data-bg="url(./images/sg1.webp)"></div>
                 <div class="dot-container">
                     <span class="dot" onclick="currentSlide(0)"></span>
                     <span class="dot" onclick="currentSlide(1)"></span>
@@ -30,7 +31,7 @@
                 </div>
             </div>
             <nav>
-                <img src="images/logo.png" class="logo">
+                <img src="images/logo.webp" alt="" class="logo">
                 <ul id="sidemenu">
                     <li><a href="#header">Home</a></li>
                     <li><a href="#about">About</a></li>
@@ -47,7 +48,7 @@
         <div class="container">
             <div class="row">
                 <div class="about-col-1">
-                    <img src="images/user.jpg">
+                    <img src="images/user.webp" alt="">
                 </div>
                 <div class="about-col-2">
                     <h1 class="sub-title">About Me</h1>
@@ -124,25 +125,25 @@
             <h1 class="sub-title">My Work</h1>
             <div class="work-list">
                 <div class="work">
-                    <img src="images/work-1.png">
+                    <img src="images/work-1.webp" alt="">
                     <div class="layer">
-                        <h3>Social Media App</h3>
+                        <h2>Social Media App</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum delectus quos vitae beatae facilis tenetur quo, voluptate ipsa enim officiis mollitia, in hic temporibus natus dignissimos sed quia soluta aliquid.</p>
                         <a href="#"><i class="fas fa-external-link-alt"></i></a>
                     </div>
                 </div>
                 <div class="work">
-                    <img src="images/work-2.png">
+                    <img src="images/work-2.webp" alt="">
                     <div class="layer">
-                        <h3>Music App</h3>
+                        <h2>Music App</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum delectus quos vitae beatae facilis tenetur quo, voluptate ipsa enim officiis mollitia, in hic temporibus natus dignissimos sed quia soluta aliquid.</p>
                         <a href="#"><i class="fas fa-external-link-alt"></i></a>
                     </div>
                 </div>
                 <div class="work">
-                    <img src="images/work-3.png">
+                    <img src="images/work-3.webp" alt="">
                     <div class="layer">
-                        <h3>Online Shopping App</h3>
+                        <h2>Online Shopping App</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum delectus quos vitae beatae facilis tenetur quo, voluptate ipsa enim officiis mollitia, in hic temporibus natus dignissimos sed quia soluta aliquid.</p>
                         <a href="#"><i class="fas fa-external-link-alt"></i></a>
                     </div>
@@ -231,12 +232,10 @@
     <a href="#header" id="scrollToTop" class="top">
         <img src="images/scroll.png" alt="Scroll For Top">
     </a>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     </script>
     <div id='snowflakeContainer'>
         <p class='snowflake'>❄</p>
     </div>
-    <script src="https://cdn.jsdelivr.net/mojs/latest/mo.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
     <script src="script.js"></script>
     <script>
@@ -247,7 +246,7 @@
         });
     </script>
     <div class="running-cat">
-        <img src="images/cat.webp">
+        <img src="images/cat.webp" alt="meomeo">
     </div>
     <div id="clock" class="clock"></div>
 </body>
