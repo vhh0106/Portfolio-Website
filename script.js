@@ -237,44 +237,44 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-function updateClock() {
-    let now = new Date(new Date().getTime() + 7 * 3600 * 1000);
-    let hours = now.getUTCHours();
-    let minutes = now.getUTCMinutes();
-    let seconds = now.getUTCSeconds();
-    let period = 'AM';
+// function updateClock() {
+//     let now = new Date(new Date().getTime() + 7 * 3600 * 1000);
+//     let hours = now.getUTCHours();
+//     let minutes = now.getUTCMinutes();
+//     let seconds = now.getUTCSeconds();
+//     let period = 'AM';
 
-    if (hours >= 12) {
-        period = 'PM';
-    }
-    if (hours > 12) {
-        hours -= 12;
-    }
-    if (hours === 0) {
-        hours = 12;
-    }
+//     if (hours >= 12) {
+//         period = 'PM';
+//     }
+//     if (hours > 12) {
+//         hours -= 12;
+//     }
+//     if (hours === 0) {
+//         hours = 12;
+//     }
 
-    // Format minutes and seconds
-    minutes = minutes < 10 ? '0' + minutes : minutes;
-    seconds = seconds < 10 ? '0' + seconds : seconds;
+//     // Format minutes and seconds
+//     minutes = minutes < 10 ? '0' + minutes : minutes;
+//     seconds = seconds < 10 ? '0' + seconds : seconds;
 
-    // Get the current date
-    let dateString = now.toLocaleDateString('en-US', {
-        weekday: 'long', // Full name of the weekday
-        year: 'numeric',
-        month: 'long', // Full name of the month
-        day: 'numeric'
-    });
+//     // Get the current date
+//     let dateString = now.toLocaleDateString('en-US', {
+//         weekday: 'long', // Full name of the weekday
+//         year: 'numeric',
+//         month: 'long', // Full name of the month
+//         day: 'numeric'
+//     });
 
-    let timeString = `${hours}:${minutes}:${seconds} ${period}`;
-    document.getElementById('clock').innerHTML = `${dateString} - ${timeString}`;
-}
+//     let timeString = `${hours}:${minutes}:${seconds} ${period}`;
+//     document.getElementById('clock').innerHTML = `${dateString} - ${timeString}`;
+// }
 
-// Initialize clock and set interval for updating
-document.addEventListener('DOMContentLoaded', (event) => {
-    updateClock();
-    setInterval(updateClock, 1000);
-});
+// // Initialize clock and set interval for updating
+// document.addEventListener('DOMContentLoaded', (event) => {
+//     updateClock();
+//     setInterval(updateClock, 1000);
+// });
 
 let currentSlideIndex = 0;
 const slides = document.querySelectorAll('.slide');
@@ -321,3 +321,24 @@ document.querySelectorAll('.slide').forEach(slide => {
     const bgImage = slide.getAttribute('data-bg');
     slide.style.backgroundImage = bgImage;
 });
+
+var typed = new Typed('.typing-text', {
+    strings: ['Frontend Developer', 'Photographer', 'Graphic Designer', 'Support Social'],
+    typeSpeed: 120,
+    loop: true
+});
+
+function toggleAudio() {
+    const audio = document.getElementById("audio-element");
+    const icon = document.getElementById("play-icon");
+
+    if (audio.paused) {
+        audio.play();
+        icon.classList.remove("fa-play");
+        icon.classList.add("fa-pause");
+    } else {
+        audio.pause();
+        icon.classList.remove("fa-pause");
+        icon.classList.add("fa-play");
+    }
+}

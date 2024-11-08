@@ -9,7 +9,7 @@
     <title>Personal Portfolio Website</title>
     <link rel="icon" href="images/logo.webp" type="imgage/x-icons">
     <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/27e3344cee.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/27e3344cee.js" crossorigin="anonymous" defer></script>
 
 </head>
 
@@ -18,6 +18,16 @@
         <div class="header-text">
             <h2><span>Vu Hoang Hiep</span></h2>
             <h1>Hi, I'm <span class="typing-text"></span></h1>
+            <div class="audio-control">
+                <button class="play-button" onclick="toggleAudio()">
+                    <i id="play-icon" class="fas fa-play"></i>
+                </button>
+            </div>
+
+            <audio id="audio-element" loop>
+                <source src="images/ikigai.mp3" type="audio/mp3">
+                Your browser does not support the audio element.
+            </audio>
         </div>
         <div class="container">
             <div class="slider">
@@ -48,7 +58,7 @@
         <div class="container">
             <div class="row">
                 <div class="about-col-1">
-                    <img src="images/user.webp" alt="">
+                    <img src="images/user.webp" alt="" loading="lazy">
                 </div>
                 <div class="about-col-2">
                     <h1 class="sub-title">About Me</h1>
@@ -125,7 +135,7 @@
             <h1 class="sub-title">My Work</h1>
             <div class="work-list">
                 <div class="work">
-                    <img src="images/work-1.webp" alt="">
+                    <img src="images/work-1.webp" alt="" loading="lazy">
                     <div class="layer">
                         <h2>Social Media App</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum delectus quos vitae beatae facilis tenetur quo, voluptate ipsa enim officiis mollitia, in hic temporibus natus dignissimos sed quia soluta aliquid.</p>
@@ -133,7 +143,7 @@
                     </div>
                 </div>
                 <div class="work">
-                    <img src="images/work-2.webp" alt="">
+                    <img src="images/work-2.webp" alt="" loading="lazy">
                     <div class="layer">
                         <h2>Music App</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum delectus quos vitae beatae facilis tenetur quo, voluptate ipsa enim officiis mollitia, in hic temporibus natus dignissimos sed quia soluta aliquid.</p>
@@ -141,7 +151,7 @@
                     </div>
                 </div>
                 <div class="work">
-                    <img src="images/work-3.webp" alt="">
+                    <img src="images/work-3.webp" alt="" loading="lazy">
                     <div class="layer">
                         <h2>Online Shopping App</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum delectus quos vitae beatae facilis tenetur quo, voluptate ipsa enim officiis mollitia, in hic temporibus natus dignissimos sed quia soluta aliquid.</p>
@@ -236,19 +246,14 @@
     <div id='snowflakeContainer'>
         <p class='snowflake'>❄</p>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
-    <script src="script.js"></script>
-    <script>
-        var typed = new Typed('.typing-text', {
-            strings: ['Frontend Developer', 'Photographer', 'Graphic Designer', 'Support Social'],
-            typeSpeed: 120,
-            loop: true
-        });
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11" defer></script>
+    <script src=" script.js " defer></script>
+
     <div class="running-cat">
-        <img src="images/cat.webp" alt="meomeo">
+        <img src="images/cat.webp " alt="meomeo" width="120px">
     </div>
-    <div id="clock" class="clock"></div>
+    <!-- <div id="clock " class="clock "></div> -->
+    <audio autoplay><source src="images/ikigai.mp3" type="audio/mp3"></audio>
 </body>
 
 </html>

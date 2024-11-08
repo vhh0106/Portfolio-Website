@@ -433,6 +433,12 @@
     /*--------reponsive small screens-------*/
     
     @media(max-width: 600px) {
+        .logo {
+            width: 150px;
+        }
+        .running-cat img {
+            width: 100px;
+        }
         .dot:first-child {
             display: none;
         }
@@ -624,10 +630,6 @@
         animation: 8s linear infinite running2;
     }
     
-    .running-cat img {
-        width: 150px;
-    }
-    
     @keyframes running2 {
         0% {
             left: -150px
@@ -636,12 +638,47 @@
             left: 200%
         }
     }
-    
-    .clock {
+    /* .clock {
         padding: 5px;
         position: fixed;
         bottom: 0px;
         right: 0px;
         font-size: 18px;
         color: #FFDF00;
+    } */
+    
+    .audio-control {
+        position: absolute;
+        width: 100%;
+        margin-top: 25px;
+        place-items: center;
+    }
+    
+    .play-button {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: #FFDF00;
+        color: #333;
+        font-size: 24px;
+        border: none;
+        cursor: pointer;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.2s;
+    }
+    
+    .play-button:hover {
+        transform: scale(1.1);
+        background-color: #FFA500;
+    }
+    
+    .play-button:focus {
+        outline: none;
+    }
+    
+    #play-icon {
+        color: #333;
     }
