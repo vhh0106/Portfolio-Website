@@ -331,14 +331,17 @@ var typed = new Typed('.typing-text', {
 function toggleAudio() {
     const audio = document.getElementById("audio-element");
     const icon = document.getElementById("play-icon");
+    const button = document.getElementById("play-button");
 
     if (audio.paused) {
         audio.play();
         icon.classList.remove("fa-play");
         icon.classList.add("fa-pause");
+        button.setAttribute("aria-label", "Pause audio");
     } else {
         audio.pause();
         icon.classList.remove("fa-pause");
         icon.classList.add("fa-play");
+        button.setAttribute("aria-label", "Play audio");
     }
 }
