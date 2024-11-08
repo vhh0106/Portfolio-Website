@@ -672,7 +672,7 @@
     
     .play-button:hover {
         transform: scale(1.1);
-        background-color: #FFA500;
+        background-color: #FFDF00;
     }
     
     .play-button:focus {
