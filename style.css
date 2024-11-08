@@ -517,9 +517,9 @@
         .logo {
             width: 150px;
         }
-        .running-cat img {
+        /* .running-cat img {
             width: 100px;
-        }
+        } */
         .dot:first-child {
             display: none;
         }
@@ -705,8 +705,7 @@
             opacity: 1
         }
     }
-    
-    .running-cat {
+    /* .running-cat {
         bottom: 0px;
         position: fixed;
         right: -150px;
@@ -720,7 +719,7 @@
         100% {
             left: 200%
         }
-    }
+    } */
     /* .clock {
         padding: 5px;
         position: fixed;
