@@ -682,3 +682,8 @@
     #play-icon {
         color: #333;
     }
+    
+    .song-title {
+        margin-top: 5px;
+        font-size: 11px;
+    }
