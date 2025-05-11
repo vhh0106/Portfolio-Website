@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work Detail - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="work-detail">
+        <div class="container">
+            <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+            <div class="work-content">
+                <div class="work-image">
+                    <img src="" alt="" id="work-image">
+                </div>
+                <div class="work-info">
+                    <h1 id="work-title"></h1>
+                    <div class="work-description">
+                        <p id="work-description"></p>
+                    </div>
+                    <div class="work-details">
+                        <h3>Project Details</h3>
+                        <ul id="work-features">
+                        </ul>
+                    </div>
+                    <div class="work-links">
+                        <a href="#" class="btn" id="live-demo">Live Demo</a>
+                        <a href="#" class="btn" id="source-code">Source Code</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Get work details from URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const workId = urlParams.get('id');
+
+        // Work details data
+        const works = {
+            'social-media': {
+                title: 'Social Media App',
+                image: 'images/work-1.webp',
+                description: 'A modern social media platform that enables users to connect, share content, and interact in real-time. Built with React for the frontend and Node.js for the backend, this application provides a seamless and engaging social networking experience.',
+                features: [
+                    'Real-time messaging using WebSocket technology',
+                    'User authentication and authorization with JWT',
+                    'Post creation and sharing with media support',
+                    'Like, comment, and share functionality',
+                    'User profile customization and privacy settings',
+                    'Responsive design for all devices',
+                    'Push notifications for user engagement'
+                ],
+                liveDemo: '#',
+                sourceCode: '#'
+            },
+            'music-app': {
+                title: 'Music App',
+                image: 'images/work-2.webp',
+                description: 'A feature-rich music streaming application that provides users with an immersive music experience. The app combines modern design with powerful functionality to deliver a seamless music discovery and playback platform.',
+                features: [
+                    'High-quality music streaming and playback',
+                    'Personalized playlist creation and management',
+                    'Advanced search and discovery features',
+                    'User profile customization and preferences',
+                    'Offline mode with download capabilities',
+                    'Social sharing and recommendations',
+                    'Cross-platform synchronization'
+                ],
+                liveDemo: '#',
+                sourceCode: '#'
+            },
+            'shopping-app': {
+                title: 'Online Shopping App',
+                image: 'images/work-3.webp',
+                description: 'A comprehensive e-commerce platform designed to provide a secure and user-friendly shopping experience. The application features a modern interface and robust backend to handle all aspects of online retail.',
+                features: [
+                    'Advanced product catalog with search and filters',
+                    'Intuitive shopping cart and wishlist functionality',
+                    'Secure payment processing with multiple options',
+                    'Real-time order tracking and notifications',
+                    'User reviews and ratings system',
+                    'Responsive design for all devices',
+                    'Admin dashboard for inventory management'
+                ],
+                liveDemo: '#',
+                sourceCode: '#'
+            }
+        };
+
+        // Update page content based on work ID
+        if (workId && works[workId]) {
+            const work = works[workId];
+            document.title = `${work.title} - Portfolio`;
+            document.getElementById('work-image').src = work.image;
+            document.getElementById('work-image').alt = work.title;
+            document.getElementById('work-title').textContent = work.title;
+            document.getElementById('work-description').textContent = work.description;
+            
+            const featuresList = document.getElementById('work-features');
+            work.features.forEach(feature => {
+                const li = document.createElement('li');
+                li.textContent = feature;
+                featuresList.appendChild(li);
+            });
+
+            document.getElementById('live-demo').href = work.liveDemo;
+            document.getElementById('source-code').href = work.sourceCode;
+        } else {
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html> 

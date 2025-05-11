@@ -15,20 +15,6 @@
 
 <body>
     <div id="header">
-        <div class="header-text">
-            <h2><span>Vu Hoang Hiep</span></h2>
-            <h1>Hi, I'm <span class="typing-text"></span></h1>
-            <div class="audio-control">
-                <button class="play-button" id="play-button" onclick="toggleAudio()" aria-label="Play audio">
-                    <i id="play-icon" class="fas fa-play"></i>
-                </button>
-                <div class="song-title">Ikigai.mp3 𓍯𓂃𓏧♡</div>
-            </div>
-
-            <audio id="audio-element" loop>
-                <source src="images/ikigai.mp3" type="audio/mp3">
-            </audio>
-        </div>
         <div class="container-header">
             <div class="slider">
                 <div class="slide" data-bg="url(./images/bg.webp)"></div>
@@ -52,6 +38,26 @@
                 </ul>
                 <i class="fas fa-bars" onclick="openmenu()"></i>
             </nav>
+            <div class="header-content">
+                <div class="header-text">
+                    <h2 class="welcome-text">Welcome to my Portfolio</h2>
+                    <h1>Hi, I'm <span class="typing-text"></span></h1>
+                    <p class="header-description">Crafting beautiful and functional web experiences</p>
+                    <div class="header-buttons">
+                        <a href="#portfolio" class="btn-primary">View My Work</a>
+                        <a href="#contact" class="btn-secondary">Contact Me</a>
+                    </div>
+                    <div class="audio-control">
+                        <button class="play-button" id="play-button" onclick="toggleAudio()" aria-label="Play audio">
+                            <i id="play-icon" class="fas fa-play"></i>
+                        </button>
+                        <div class="song-title">Ikigai.mp3 𓍯𓂃𓏧♡</div>
+                    </div>
+                </div>
+            </div>
+            <audio id="audio-element" loop>
+                <source src="images/ikigai.mp3" type="audio/mp3">
+            </audio>
         </div>
     </div>
     <div id="about">
@@ -111,22 +117,21 @@
                 <div>
                     <i class="fa-solid fa-code"></i>
                     <h2>Web Design</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis earum ullam dolore labore asperiores accusamus enim consequatur nihil at? Aliquam animi soluta amet impedit blanditiis, reiciendis harum quod rerum ducimus.</p>
-                    <a href="#">Learn more</a>
+                    <p>Creating responsive and modern websites with clean code and optimal performance. Specializing in HTML5, CSS3, JavaScript, and popular frameworks. Focus on user experience, accessibility, and cross-browser compatibility.</p>
+                    <a href="#portfolio">View Projects</a>
                 </div>
                 <div>
                     <i class="fa-solid fa-crop"></i>
                     <h2>UI/UX Design</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis earum ullam dolore labore asperiores accusamus enim consequatur nihil at? Aliquam animi soluta amet impedit blanditiis, reiciendis harum quod rerum ducimus.</p>
-                    <a href="#">Learn more</a>
+                    <p>Designing intuitive and engaging user interfaces with a focus on user experience. Creating wireframes, prototypes, and visual designs using modern tools like Figma and Adobe XD. Implementing user-centered design principles.</p>
+                    <a href="#portfolio">View Projects</a>
                 </div>
                 <div>
                     <i class="fa-brands fa-app-store"></i>
                     <h2>App Design</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis earum ullam dolore labore asperiores accusamus enim consequatur nihil at? Aliquam animi soluta amet impedit blanditiis, reiciendis harum quod rerum ducimus.</p>
-                    <a href="#">Learn more</a>
+                    <p>Developing cross-platform mobile applications with modern frameworks. Creating seamless user experiences with responsive design and native features. Implementing best practices for performance and user engagement.</p>
+                    <a href="#portfolio">View Projects</a>
                 </div>
-
             </div>
         </div>
     </div>
@@ -138,28 +143,40 @@
                     <img src="images/work-1.webp" alt="" loading="lazy">
                     <div class="layer">
                         <h2>Social Media App</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum delectus quos vitae beatae facilis tenetur quo, voluptate ipsa enim officiis mollitia, in hic temporibus natus dignissimos sed quia soluta aliquid.</p>
-                        <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                        <p>A modern social media platform built with React and Node.js. Features include real-time messaging, post sharing, and user authentication. The app provides a seamless experience for users to connect and share content.</p>
+                        <a href="work-detail.html?id=social-media"><i class="fas fa-external-link-alt"></i></a>
                     </div>
                 </div>
                 <div class="work">
                     <img src="images/work-2.webp" alt="" loading="lazy">
                     <div class="layer">
                         <h2>Music App</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum delectus quos vitae beatae facilis tenetur quo, voluptate ipsa enim officiis mollitia, in hic temporibus natus dignissimos sed quia soluta aliquid.</p>
-                        <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                        <p>A music streaming application that allows users to discover and play their favorite songs. Built with modern web technologies, featuring playlist management, user profiles, and offline mode support.</p>
+                        <a href="work-detail.html?id=music-app"><i class="fas fa-external-link-alt"></i></a>
                     </div>
                 </div>
                 <div class="work">
                     <img src="images/work-3.webp" alt="" loading="lazy">
                     <div class="layer">
                         <h2>Online Shopping App</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum delectus quos vitae beatae facilis tenetur quo, voluptate ipsa enim officiis mollitia, in hic temporibus natus dignissimos sed quia soluta aliquid.</p>
-                        <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                        <p>An e-commerce platform with a focus on user experience and secure transactions. Features include product catalog, shopping cart, secure payment processing, and order tracking system.</p>
+                        <a href="work-detail.html?id=shopping-app"><i class="fas fa-external-link-alt"></i></a>
                     </div>
                 </div>
             </div>
             <a href="#" class="btn">See more</a>
+        </div>
+    </div>
+    <div id="map-section">
+        <div class="container">
+            <h1 class="sub-title">Location</h1>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4226.305976771052!2d106.70484901092594!3d10.730478989371344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f408dea6f33%3A0xcf05a48a1288bc3e!2sMHT%20JOINT%20STOCK%20COMPANY!5e1!3m2!1svi!2s!4v1746988345940!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="address-info">
+                <h3><i class="fas fa-map-marker-alt"></i> Address</h3>
+                <p>R78-79 Khu phố Hưng Phước 3, quận 7, TP. HCM</p>
+            </div>
         </div>
     </div>
     <div id="contact">
@@ -189,10 +206,11 @@
                 </div>
             </div>
         </div>
-        <div class="copyright">
-            <p>Copyright © <i class="fa-solid fa-heart"></i> VHH 2024</p>
-        </div>
+
     </div>
+    <div class="copyright">
+        <p>Copyright © <i class="fa-solid fa-heart"></i><a style="color: #FFDF00;" href="https://facebook.com/vhh0106"> VHH 2025</a> </p>
+    </div>  
     <div id="heart">
         <div class="spark spark-1">
             <svg viewBox="0 0 32 29.6" width="80px" fill="#fff">
