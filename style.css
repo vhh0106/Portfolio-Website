@@ -51,7 +51,7 @@
     }
     
     .play-button:hover {
-        background: #FFDF00;
+        background: #ffffff;
         color: #000;
         transform: scale(1.1);
     }
