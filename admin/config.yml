@@ -17,7 +17,7 @@ collections:
         fields:
           - { label: "Welcome Text", name: "welcome", widget: "string" }
           - { label: "Header Description", name: "headerDescription", widget: "string" }
-          - { label: "Typing Text List", name: "typing", widget: "list", field: {label: Text, name: text, widget: string} }
+          - { label: "Typing Text List", name: "typing", widget: "list", field: { label: "Text", name: "text", widget: "string" } }
           - { label: "Email", name: "email", widget: "string" }
           - { label: "Phone", name: "phone", widget: "string" }
           - { label: "Address", name: "address", widget: "string" }
@@ -25,15 +25,18 @@ collections:
 
   - name: "services"
     label: "Services"
-    file: "content/services.json"
-    fields:
-      - label: "Services"
-        name: "items"
-        widget: "list"
+    files:
+      - file: "content/services.json"
+        label: "Services List"
+        name: "services"
         fields:
-          - {label: "Icon (FontAwesome class)", name: "icon", widget: "string", default: "fa-solid fa-code"}
-          - {label: "Title", name: "title", widget: "string"}
-          - {label: "Description", name: "description", widget: "text"}
+          - label: "Services"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Icon (FontAwesome class)", name: "icon", widget: "string", default: "fa-solid fa-code" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
 
   - name: "works"
     label: "Works"
@@ -43,14 +46,14 @@ collections:
     slug: "{{slug}}"
     extension: "json"
     fields:
-      - {label: "ID (URL param)", name: "id", widget: "string"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Image", name: "image", widget: "image"}
-      - {label: "Short Excerpt", name: "excerpt", widget: "text"}
-      - {label: "Description", name: "description", widget: "text"}
+      - { label: "ID (URL param)", name: "id", widget: "string" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Short Excerpt", name: "excerpt", widget: "text" }
+      - { label: "Description", name: "description", widget: "text" }
       - label: "Features"
         name: "features"
         widget: "list"
-        field: {label: "Feature", name: "feature", widget: "string"}
-      - {label: "Live Demo URL", name: "liveDemo", widget: "string", required: false}
-      - {label: "Source Code URL", name: "sourceCode", widget: "string", required: false}
+        field: { label: "Feature", name: "feature", widget: "string" }
+      - { label: "Live Demo URL", name: "liveDemo", widget: "string", required: false }
+      - { label: "Source Code URL", name: "sourceCode", widget: "string", required: false }
