@@ -7,6 +7,40 @@
     <title>CMS</title>
     <style>html,body,#nc-root{height:100%}body{margin:0}</style>
   </head>
+  <!-- Netlify Identity widget phải có trên trang gốc để xử lý confirmation_token -->
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script>
+  (function () {
+    // Nếu URL có confirmation_token hoặc invite_token thì mở widget để hoàn tất
+    var hasToken = location.hash && (location.hash.includes('confirmation_token=') || location.hash.includes('invite_token='));
+    if (!window.netlifyIdentity) return;
+
+    // Khi Identity init xong:
+    window.netlifyIdentity.on('init', function (user) {
+      // Nếu vừa xác nhận xong, Netlify sẽ tự đăng nhập => chuyển sang /admin
+      if (user) {
+        // Xoá hash để sạch URL
+        history.replaceState(null, '', location.pathname + location.search);
+        location.replace('/admin/');
+      } else if (hasToken) {
+        // Có token mà chưa login => mở popup để widget xử lý token
+        window.netlifyIdentity.open('login');
+      }
+    });
+
+    // Sau khi login thành công ở root thì chuyển thẳng sang /admin
+    window.netlifyIdentity.on('login', function () {
+      history.replaceState(null, '', location.pathname + location.search);
+      location.replace('/admin/');
+    });
+
+    // (tuỳ chọn) nếu logout ở root thì reload
+    window.netlifyIdentity.on('logout', function () {
+      location.reload();
+    });
+  })();
+</script>
+
   <body>
     <div id="nc-root"></div>
 
