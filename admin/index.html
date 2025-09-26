@@ -10,35 +10,29 @@
   <body>
     <div id="nc-root"></div>
 
-    <!-- Netlify Identity -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-
-    <!-- Decap CMS -->
     <script>window.CMS_MANUAL_INIT = true;</script>
     <script src="https://unpkg.com/decap-cms@3.8.3/dist/decap-cms.js"></script>
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
+      document.addEventListener('DOMContentLoaded', function () {
         if (window.netlifyIdentity) {
-          window.netlifyIdentity.on("init", function (user) {
-            // Nếu có hash token mà chưa login -> mở login popup
-            var hash = location.hash || "";
-            if (!user && (hash.includes("confirmation_token=") || hash.includes("invite_token="))) {
-              window.netlifyIdentity.open("login");
+          window.netlifyIdentity.on('init', function (user) {
+            var h = location.hash || "";
+            // Nếu vào /admin/#confirmation_token=... mà chưa login -> mở login để widget xử lý token
+            if (!user && (h.includes('confirmation_token=') || h.includes('invite_token='))) {
+              window.netlifyIdentity.open('login');
             }
-            // Nếu đã login thành công -> xoá hash cho sạch
+            // Nếu đã login -> xoá hash cho sạch URL
             if (user && location.hash) {
-              history.replaceState(null, "", location.pathname + location.search);
+              history.replaceState(null, '', location.pathname + location.search);
             }
           });
-          window.netlifyIdentity.on("login", function () {
-            if (location.hash) {
-              history.replaceState(null, "", location.pathname + location.search);
-            }
+          window.netlifyIdentity.on('login', function () {
+            if (location.hash) history.replaceState(null, '', location.pathname + location.search);
             location.reload();
           });
         }
-        // CMS sẽ tự load /admin/config.yml
-        window.CMS.init();
+        window.CMS.init(); // Decap tự load /admin/config.yml
       });
     </script>
   </body>
