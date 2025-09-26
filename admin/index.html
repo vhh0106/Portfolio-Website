@@ -10,36 +10,34 @@
   <body>
     <div id="nc-root"></div>
 
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" defer></script>
+    <!-- Netlify Identity -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+    <!-- Decap CMS -->
     <script>window.CMS_MANUAL_INIT = true;</script>
     <script src="https://unpkg.com/decap-cms@3.8.3/dist/decap-cms.js"></script>
     <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        // Khi widget sẵn sàng:
+      document.addEventListener("DOMContentLoaded", function () {
         if (window.netlifyIdentity) {
-          window.netlifyIdentity.on('init', function (user) {
-            // Nếu vừa vào /admin/#confirmation_token=... mà chưa có user,
-            // mở login để widget xử lý token trong hash (nếu có)
+          window.netlifyIdentity.on("init", function (user) {
+            // Nếu có hash token mà chưa login -> mở login popup
             var hash = location.hash || "";
             if (!user && (hash.includes("confirmation_token=") || hash.includes("invite_token="))) {
               window.netlifyIdentity.open("login");
             }
-            // Nếu đã có user sau khi xử lý token -> xóa hash cho sạch
+            // Nếu đã login thành công -> xoá hash cho sạch
             if (user && location.hash) {
               history.replaceState(null, "", location.pathname + location.search);
             }
           });
-
-          // Nếu user login thành công từ popup
-          window.netlifyIdentity.on('login', function () {
+          window.netlifyIdentity.on("login", function () {
             if (location.hash) {
               history.replaceState(null, "", location.pathname + location.search);
             }
             location.reload();
           });
         }
-
-        // Để Decap tự load /admin/config.yml
+        // CMS sẽ tự load /admin/config.yml
         window.CMS.init();
       });
     </script>
