@@ -4,28 +4,49 @@
     <meta charset="utf-8" />
     <meta name="robots" content="noindex" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>CMS</title>
-    <link rel="icon" href="/favicon.ico" />
-    <style>
-      html,body,#nc-root { height: 100%; }
-      body { margin: 0; }
-    </style>
+    <title>CMS Safe Mode</title>
+    <style>html,body,#nc-root{height:100%}body{margin:0}</style>
   </head>
   <body>
     <div id="nc-root"></div>
 
-    <!-- Netlify Identity (login) -->
+    <script>
+      window.CMS_MANUAL_INIT = true;
+      console.log("[CMS] manual init on");
+    </script>
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" defer></script>
-
-    <!-- Decap CMS -->
-    <script src="https://unpkg.com/decap-cms@3.8.3/dist/decap-cms.js" defer></script>
+    <script src="https://unpkg.com/decap-cms@3.8.3/dist/decap-cms.js"></script>
 
     <script>
+      (async function () {
+        try {
+          console.log("[CMS] fetching config.yml...");
+          const res = await fetch("./config.yml", { cache: "no-store" });
+          if (!res.ok) throw new Error("config.yml HTTP " + res.status);
+          const text = await res.text();
+          console.log("[CMS] config length:", text.length);
+
+          const cfg = window.CMS && window.CMS.yaml ? window.CMS.yaml.load(text) : null;
+          if (!cfg) throw new Error("YAML parser not available");
+          console.log("[CMS] parsed config", cfg);
+
+          window.CMS.init({ config: cfg });
+          console.log("[CMS] init called");
+        } catch (e) {
+          console.error("[CMS] init error:", e);
+          const pre = document.createElement("pre");
+          pre.textContent = "CMS init error: " + e.message;
+          pre.style.padding = "12px";
+          document.body.appendChild(pre);
+        }
+      })();
+
       document.addEventListener('DOMContentLoaded', function () {
         if (window.netlifyIdentity) {
           window.netlifyIdentity.on('init', (user) => {
+            console.log("[Identity] init", !!user);
             if (!user) {
-              window.netlifyIdentity.on('login', () => window.location.reload());
+              window.netlifyIdentity.on('login', () => location.reload());
             }
           });
         }
@@ -33,4 +54,3 @@
     </script>
   </body>
 </html>
-
